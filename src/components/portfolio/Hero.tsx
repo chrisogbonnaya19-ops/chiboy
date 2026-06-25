@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, Github, Instagram, Linkedin, MessageCircle, Sparkles } from "lucide-react";
+import portrait from "@/assets/chris-portrait.jpg";
+
 
 export default function Hero() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
