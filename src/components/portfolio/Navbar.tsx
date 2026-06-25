@@ -109,18 +109,20 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <button
-          onClick={() => scrollTo("contact")}
-          className="hidden rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition hover:scale-105 sm:inline-flex"
-        >
-          Let's talk
-        </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => scrollTo("contact")}
+            className="hidden rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition hover:scale-105 sm:inline-flex"
+          >
+            Let's talk
+          </button>
 
-        <button
-          aria-label="Open menu"
-          onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-full glass lg:hidden"
-        >
+          <button
+            aria-label="Open menu"
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-10 w-10 place-items-center rounded-full glass lg:hidden"
+          >
           <div className="flex flex-col gap-1.5">
             <span className={`h-0.5 w-5 bg-foreground transition ${open ? "translate-y-2 rotate-45" : ""}`} />
             <span className={`h-0.5 w-5 bg-foreground transition ${open ? "opacity-0" : ""}`} />
