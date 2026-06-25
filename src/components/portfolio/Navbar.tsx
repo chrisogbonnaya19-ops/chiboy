@@ -128,7 +128,8 @@ export default function Navbar() {
             <span className={`h-0.5 w-5 bg-foreground transition ${open ? "opacity-0" : ""}`} />
             <span className={`h-0.5 w-5 bg-foreground transition ${open ? "-translate-y-2 -rotate-45" : ""}`} />
           </div>
-        </button>
+          </button>
+        </div>
       </div>
 
       {open && (
