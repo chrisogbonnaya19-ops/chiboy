@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Counter } from "./Counter";
+import portrait from "@/assets/chris-portrait.jpg";
+
 
 const stats = [
   { value: 50, suffix: "+", label: "Projects Completed" },
