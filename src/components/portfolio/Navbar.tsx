@@ -1,4 +1,34 @@
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
+function ThemeToggle() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const dark = stored ? stored === "dark" : prefersDark;
+    document.documentElement.classList.toggle("dark", dark);
+    setIsDark(dark);
+  }, []);
+
+  const toggle = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
+
+  return (
+    <button
+      aria-label="Toggle theme"
+      onClick={toggle}
+      className="grid h-10 w-10 place-items-center rounded-full glass transition hover:scale-105"
+    >
+      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
+  );
+}
 
 const NAV = [
   { id: "home", label: "Home" },
@@ -79,24 +109,27 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <button
-          onClick={() => scrollTo("contact")}
-          className="hidden rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition hover:scale-105 sm:inline-flex"
-        >
-          Let's talk
-        </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => scrollTo("contact")}
+            className="hidden rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition hover:scale-105 sm:inline-flex"
+          >
+            Let's talk
+          </button>
 
-        <button
-          aria-label="Open menu"
-          onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-full glass lg:hidden"
-        >
+          <button
+            aria-label="Open menu"
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-10 w-10 place-items-center rounded-full glass lg:hidden"
+          >
           <div className="flex flex-col gap-1.5">
             <span className={`h-0.5 w-5 bg-foreground transition ${open ? "translate-y-2 rotate-45" : ""}`} />
             <span className={`h-0.5 w-5 bg-foreground transition ${open ? "opacity-0" : ""}`} />
             <span className={`h-0.5 w-5 bg-foreground transition ${open ? "-translate-y-2 -rotate-45" : ""}`} />
           </div>
-        </button>
+          </button>
+        </div>
       </div>
 
       {open && (
