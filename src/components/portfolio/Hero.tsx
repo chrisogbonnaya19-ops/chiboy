@@ -101,7 +101,7 @@ export default function Hero() {
             <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-primary/40 via-transparent to-primary-glow/40 blur-2xl" />
             <div className="relative h-full w-full overflow-hidden rounded-[2rem] glass-strong p-2">
               <img
-                src="/src/assets/chris-portrait.jpg"
+                src={portrait}
                 alt="Chris Ogbonnaya"
                 width={896}
                 height={1152}
