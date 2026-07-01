@@ -32,11 +32,11 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/30 to-transparent blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl glass-strong p-2">
-                <img src="/src/assets/chris-portrait.jpg" loading="lazy" width={896} height={1152} alt="Chris portrait" className="aspect-[4/5] w-full rounded-2xl object-cover" />
+                <img src={portrait} loading="lazy" width={896} height={1152} alt="Chris Ogbonnaya portrait" className="aspect-[4/5] w-full rounded-2xl object-cover" />
               </div>
-              <div className="absolute -bottom-6 -right-6 rounded-2xl glass-strong px-5 py-4 shadow-elegant">
-                <div className="text-3xl font-bold text-gradient" style={{ backgroundImage: "var(--gradient-primary)" }}>3+ yrs</div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">Experience</div>
+              <div className="absolute -bottom-6 -right-6 rounded-2xl glass-strong px-5 py-4 shadow-elegant text-center">
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">Certificate</div>
+                <div className="mt-1 text-sm font-semibold">Coming soon</div>
               </div>
             </div>
           </motion.div>
