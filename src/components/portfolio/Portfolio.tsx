@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
 import finwise from "@/assets/project-finwise.jpg";
@@ -77,14 +77,6 @@ export default function Portfolio() {
                     {p.tech.map((t) => (
                       <span key={t} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
                     ))}
-                  </div>
-                  <div className="mt-6 flex gap-3">
-                    <button className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background transition hover:scale-105">
-                      <ExternalLink className="size-3.5" /> Live Demo
-                    </button>
-                    <button className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs font-semibold transition hover:scale-105">
-                      View Case Study
-                    </button>
                   </div>
                 </div>
               </motion.article>

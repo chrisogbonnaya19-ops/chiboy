@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-2">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-primary-glow text-sm font-bold text-primary-foreground shadow-glow">C</span>
-              <span className="font-display text-lg font-bold">Chris Ogbonnaya<span className="text-primary">.</span></span>
+              <span className="font-display text-lg font-bold">ChrisDev<span className="text-primary">.</span></span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
               Web Design · UI/UX Design · Graphic Design · Front-End Development · Back-End Development

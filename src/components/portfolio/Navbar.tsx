@@ -82,7 +82,7 @@ export default function Navbar() {
             C
           </span>
           <span className="font-display text-lg font-bold tracking-tight">
-            Chris<span className="text-primary">.</span>
+            ChrisDev<span className="text-primary">.</span>
           </span>
         </button>
 
