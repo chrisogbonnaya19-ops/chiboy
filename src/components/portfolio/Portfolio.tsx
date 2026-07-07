@@ -82,6 +82,16 @@ export default function Portfolio() {
                       <span key={t} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
                     ))}
                   </div>
+                  {p.url && (
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2 transition-all"
+                    >
+                      Visit Live Site <ArrowUpRight className="size-4" />
+                    </a>
+                  )}
                 </div>
               </motion.article>
             ))}
