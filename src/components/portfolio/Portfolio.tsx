@@ -6,17 +6,21 @@ import finwise from "@/assets/project-finwise.jpg";
 import vistara from "@/assets/project-vistara.jpg";
 import autocare from "@/assets/project-autocare.jpg";
 import brand from "@/assets/project-brand.jpg";
+import realestate from "@/assets/project-realestate.jpg";
+import finance from "@/assets/project-finance.jpg";
 
-type Cat = "All" | "Web Design" | "UI/UX" | "Development" | "Graphic Design";
+type Cat = "All" | "Web Design" | "UI/UX" | "Development" | "Graphic Design" | "Real Estate" | "Finance";
 
-const projects: { title: string; desc: string; tech: string[]; cats: Cat[]; img: string }[] = [
-  { title: "Finwise Mobile Banking App", desc: "Modern fintech mobile application for digital banking.", tech: ["Figma", "React Native", "UI/UX"], cats: ["UI/UX"], img: finwise },
+const projects: { title: string; desc: string; tech: string[]; cats: Cat[]; img: string; url?: string }[] = [
+  { title: "Luxury Real Estate Hub", desc: "Premium property marketplace with advanced search, map view, agent profiles and mortgage tools.", tech: ["React", "TypeScript", "Tailwind", "Framer Motion"], cats: ["Real Estate", "Web Design", "Development"], img: realestate, url: "https://luxury-real-estate-hub.vercel.app/" },
+  { title: "WealthFlow Finance Dashboard", desc: "Modern fintech dashboard for portfolio tracking, market insights and AI-powered recommendations.", tech: ["React", "TypeScript", "Charts", "UI/UX"], cats: ["Finance", "UI/UX", "Development"], img: finance },
+  { title: "Finwise Mobile Banking App", desc: "Modern fintech mobile application for digital banking.", tech: ["Figma", "React Native", "UI/UX"], cats: ["UI/UX", "Finance"], img: finwise },
   { title: "Vistara Mall", desc: "Modern e-commerce marketplace platform.", tech: ["React", "Node.js", "MongoDB"], cats: ["Development", "Web Design"], img: vistara },
   { title: "AutoCare Website", desc: "Automotive services website focused on customer acquisition.", tech: ["HTML", "CSS", "JavaScript"], cats: ["Web Design", "Development"], img: autocare },
   { title: "Brand Identity Project", desc: "Complete branding and graphic design project.", tech: ["Illustrator", "Photoshop"], cats: ["Graphic Design"], img: brand },
 ];
 
-const CATS: Cat[] = ["All", "Web Design", "UI/UX", "Development", "Graphic Design"];
+const CATS: Cat[] = ["All", "Web Design", "UI/UX", "Development", "Real Estate", "Finance", "Graphic Design"];
 
 export default function Portfolio() {
   const [active, setActive] = useState<Cat>("All");
@@ -78,6 +82,16 @@ export default function Portfolio() {
                       <span key={t} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
                     ))}
                   </div>
+                  {p.url && (
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2 transition-all"
+                    >
+                      Visit Live Site <ArrowUpRight className="size-4" />
+                    </a>
+                  )}
                 </div>
               </motion.article>
             ))}
