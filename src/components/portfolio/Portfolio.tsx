@@ -20,7 +20,7 @@ const projects: { title: string; desc: string; tech: string[]; cats: Cat[]; img:
   { title: "Brand Identity Project", desc: "Complete branding and graphic design project.", tech: ["Illustrator", "Photoshop"], cats: ["Graphic Design"], img: brand },
 ];
 
-const CATS: Cat[] = ["All", "Web Design", "UI/UX", "Development", "Graphic Design"];
+const CATS: Cat[] = ["All", "Web Design", "UI/UX", "Development", "Real Estate", "Finance", "Graphic Design"];
 
 export default function Portfolio() {
   const [active, setActive] = useState<Cat>("All");
